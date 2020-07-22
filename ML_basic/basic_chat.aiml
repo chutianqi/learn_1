@@ -1,0 +1,41 @@
+<aiml version='1.0.1' encoding='UTF-8' >
+<!--获取模糊匹配位置的关键词-->
+    <category>
+        <pattern>一个*是*吗</pattern>
+        <template>
+            第一个参数是<star index='1'/>,第二个参数是<star index='2'/>
+        </template>
+    </category>
+    <!--随机标签-->
+    <category>
+        <pattern>好想*</pattern>
+        <template>
+            <srai>好想</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>好想</pattern>
+        <template>
+            <random>
+            <li>我也想你了</li>
+            <li>不要脸</li>
+            <li>你想啥呢想</li>
+            <li>你想<star index='2'/>干啥啊</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>我是*</pattern>
+        <template>
+        你好啊<set name='username'><star/></set>,很高兴见到你！
+        </template>
+    </category>
+    <category>
+        <pattern>晚安</pattern>
+        <template>
+        美梦啊，<get name='username'/>,跟你聊天很愉快，期待下一次
+        </template>
+    </category>
+
+</aiml>
